@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}jackmansoftware.com{% endblock %}</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<link rel="stylesheet" type= text/css href="css/index.css">
+<body>
+    <header>  
+    <nav class="navbar">
+    <div type="logo" class="logo">Jackmansoftware.com </div>
+    {% block header %} 
+        <div>    
+            <ul class="navbar_block">
+                <li><a href="/about">About</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/contacts">Contacts</a></li>
+                <li><a href="/portfolio">Portfolio</a></li>
+                <li><a href="/login" class="lo">Login</a></li>
+                <li><a href="/signup" class="si">Sign-Up</a></li>
+             </ul>
+        </div>
+    </nav>
+    {% endblock %}
+    </header>
+    <div class="cont">
+        {% block content %}
+        <h3>Welcome To this website</h3>
+        <p>This is the website where you can get different blogs about web devel
+            opment, programming languages and related technologies
+        </p>
+        {% endblock %}
+    </div>
+</body>
+</html>
