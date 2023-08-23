@@ -1,19 +1,19 @@
 from flask import Flask, render_template, redirect, url_for, request
 from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin
 from flask_sqlalchemy import SQLAlchemy
+
 """
 creates flask application
 """
+
+db = SQLAlchemy()
 def create_app():
     """creates app"""
     app = Flask(__name__)
+    
+    app.config['SECRET_KEY'] = 'yaibhbhs8385qjd'
+    app.config['SQLALCHEMY_DATABASE_URI']='mysql://jackmanSoftware:password@jackmanS1@localhost/portfolio_project'
 
-    app.config['SECRET_KEY'] = 'my secret key'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://jackmanSoftware:password@jackmanS1@localhost/portfolio_project'
-    
-    # creats db object from sqlalchemy class
-    db = SQLAlchemy()
-    
     #initializes database extension
     db.init_app(app)
     #

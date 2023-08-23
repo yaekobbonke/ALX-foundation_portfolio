@@ -9,7 +9,7 @@ def home():
     return render_template("base.html")
 
 
-@main_bp.route("/about")
+@main_bp.route("/about", methods=['GET', 'POST'])
 def about():
     return render_template("about.html")
 
@@ -34,14 +34,3 @@ def services():
 @main_bp.route("/contacts")
 def contacts():
     return render_template("contacts.html")
-
-@main_bp.route("/login")
-def login():
-    """ used to login registered user """
-    return render_template("login.html")
-
-
-@main_bp.route("/signup")
-def signup():
-    """allows new user to register"""
-    return render_template("signup.html")

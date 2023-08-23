@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}jackmansoftware.com{% endblock %}</title>
-    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
+    
 </head>
-<link rel="stylesheet" type= text/css href="css/index.css">
+
 <body>
     <header>  
     <nav class="navbar">
@@ -19,12 +20,13 @@
                 <li><a href="/contacts">Contacts</a></li>
                 <li><a href="/portfolio">Portfolio</a></li>
                 <li><a href="/login" class="lo">Login</a></li>
-                <li><a href="/signup" class="si">Sign-Up</a></li>
+                <li><a href="/register" class="si">Register</a></li>
              </ul>
         </div>
     </nav>
     {% endblock %}
     </header>
+    <div class="background-cover"></div>
     <div class="cont">
         {% block content %}
         <h3>Welcome To this website</h3>
