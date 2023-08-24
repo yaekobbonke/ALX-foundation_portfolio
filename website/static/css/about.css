@@ -1,0 +1,15 @@
+.me {
+background-color: green;
+padding-left: 10px;
+padding-top: -10px;
+margin-left: -7px;
+}
+.me h3 {
+font-size: 50px;
+color: white;
+}
+.me p {
+font-size: 38px;
+margin-top: -140px;
+color: black;
+}

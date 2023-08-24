@@ -1,9 +1,11 @@
 {% extends 'base.html'%}
-
+{% block custom_css %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/about.css')}}"
+{% endblock %}
 {% block title %} About Me {% endblock %}
 {% block content %}
 
-<div> <h3>About Me</h3>
+<div class="me"><h3>About Me</h3>
 	<p>I am software engineering student of ALX.<br>
 	Currently, I am finalizing foundation stage.<br>
 	In the comming month of september,<br> I will be specializing in backend</p>

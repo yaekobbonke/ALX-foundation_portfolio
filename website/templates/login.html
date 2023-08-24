@@ -11,10 +11,9 @@
             <div class="form-group">
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
+		 <button type="submit">Login</button>
             </div>
 	    <p>Don't have an account?<a href="{{ url_for("auth.register") }}">Sign Up here</a></p>
-	    
-            <button type="submit">Login</button>
         </form>
     </div>
 {% endblock %}
