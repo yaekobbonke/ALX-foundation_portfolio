@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-
-<html lang="eng">
-	<head>
-		<title>Dashboard</title>
-	</head>
-<body>
-	<p>Hello {{ username }}, welcome to your profile page</p>
-</body>
-
-</html>
+{% if current_user.is_authenticated %}
+<p>Welcome, {{current_user.username}}</>p
+{% else %}
+<p> Please log in to view this page.</p>
+{% endif %}

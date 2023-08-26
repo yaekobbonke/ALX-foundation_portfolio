@@ -2,11 +2,16 @@
 
 {% block title %}Contacts{% endblock %}
 
+{% block custom_css %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/contacts.css')}}"
+{% endblock %}
 {% block content %}
+<div class="contact">
     <h2>Contact Information</h2>
     <ul>
         <li>Name: Yaekob Bonke</li>
         <li>Email: jackmanbonke@gmail.com</li>
         <li>Phone: +251932060350/+25134007629</li>
     </ul>
+</div>
 {% endblock %}

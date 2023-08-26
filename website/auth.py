@@ -1,7 +1,8 @@
 from flask import Blueprint,render_template, request, redirect, url_for, flash
 from flask_login import login_required, login_user, logout_user, current_user
 from .models import User
-from website import db
+from .models import Blog
+
 
 #from . import load_user
 
@@ -12,21 +13,23 @@ auth_bp = Blueprint("auth", __name__)
 @login_required
 def dashboard():
     """displays the profile/dashboard of user after successful loggingin"""
-    usename = current_user.username
-    return render_template('dashboard.html', username = usename)
-
-
+    user = current_user
+    return render_template('dashboard.html', user = user)
+#login view
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
     """allows user to login"""
+    if current_user.is_authenticated:
+        return redirect(url_for('dashboard'))
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
 
         user = User.query.filter_by(username=username).first()
-        if user and user.password == password:
+        if user and user.verify_password(password):
             # searches the provided username in the database and 
-            login_user()
+            login_user(user)
             return redirect (url_for('dashboard'))
         else:
             return "user doesn't exist"
@@ -35,7 +38,7 @@ def login():
 
 @auth_bp.route("/register", methods=["GET", "POST"])
 def register():
-    """signs up new user"""
+    """Registers up new user"""
     if request.method == "POST":
         email = request.form["email"]
         username = request.form["username"]
@@ -49,12 +52,12 @@ def register():
         if user:
             
             flash("Email already exists.", category='error')
-            redirect(url_for("login"))
+            redirect(url_for("auth.login"))
         else:
             new_user = User(username=username, email=email, password=password)
             db.session.add(new_user)
             db.session.commit()
-            return redirect(url_for('login'))
+            return redirect(url_for('auth.login'))
             flash('User added successfully')
             
     return render_template("register.html")

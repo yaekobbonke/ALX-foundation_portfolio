@@ -1,5 +1,6 @@
-from flask import Flask, render_template, redirect, url_for, request
-from flask_login import LoginManager, login_user, logout_user, login_required, UserMixin
+from flask import Flask
+#from website.models import User
+from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 
 """
@@ -16,13 +17,15 @@ def create_app():
 
     #initializes database extension
     db.init_app(app)
-    #
+    #creating an instance of the LoginManager class
     login_manager = LoginManager(app)
+    #Associating it with my flask app
+    login_manager.init_app(app)
 
     @login_manager.user_loader
     def load_user(user_id):
         """retreves the user object based on the user_id"""
-        return User.query.get(user_id)
+        return User.query.get(int(user_id))
     
 
     from .main import main_bp

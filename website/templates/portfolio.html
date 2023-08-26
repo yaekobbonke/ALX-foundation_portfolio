@@ -2,18 +2,27 @@
 
 {% block title %}Portfolio{% endblock %}
 
+{% block custom_css %}
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/portfolio.css')}}"
+{% endblock %}
+
 {% block content %}
+<div class="service-container">
     <h2>My Portfolio Projects</h2>
-    <div class="project">
+    <div class="service-box"> <i class='bx bx-code'></i>
         <h3>Portfolio website development</h3>
-        <p>Description of Portfolio website development</p>
+	<p>Description of Portfolio website development</p>
+	<a href="#" class="btn">Read More</a>
     </div>
-    <div class="project">
-        <h3> Personal chatting appllication</h3>
-        <p>Description of Personal chatting application</p>
+    <div class="service-box"> <i class='bx bx-brush'></i>
+        <h3>Graphic Design</h3>
+	<p>Description of Personal chatting application</p>
+	 <a href="#" class="btn">Read More</a>
     </div>
-    <div class="project">
+    <div class="service-box"> <i class='bx bx-plus-medical' ></i>
         <h3>Hospital management system app</h3>
-        <p>Description of Hospital management app</p >
-    </div>
+        <p>Description of Hospital management app</p>
+	 <a href="#" class="btn">Read More</a>
+	</div>
+</div>
 {% endblock %}

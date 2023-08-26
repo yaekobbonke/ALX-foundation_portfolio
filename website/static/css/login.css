@@ -1,0 +1,22 @@
+.container {
+background-color: wheat;
+
+}
+.container h2 {
+font-size: 45px;
+padding: 20px;
+margin-bottom: -25px;
+}
+#username {
+width: 250px;
+height: 25px;
+border: none;
+margin: -5px;
+margin-top: -20px;
+padding-top: -10px;
+}
+#password {
+width: 250px;
+height: 25px;
+border: none;
+}
