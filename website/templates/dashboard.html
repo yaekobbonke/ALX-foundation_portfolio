@@ -1,5 +1,38 @@
-{% if current_user.is_authenticated %}
-<p>Welcome, {{current_user.username}}</>p
-{% else %}
-<p> Please log in to view this page.</p>
-{% endif %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Dashboard, {{ current_user.username }}!</h1>
+    
+    <h2>Account Information</h2>
+    <p>Email: {{ current_user.email }}</p>
+    <p>Joined on: {{ current_user.joined_date }}</p>
+
+    <h2>Recent Activity</h2>
+    <ul>
+        {% for activity in current_user.recent_activity %}
+            <li>{{ activity }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Tasks</h2>
+    <ul>
+        {% for task in current_user.tasks %}
+            <li>{{ task.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Notifications</h2>
+    <ul>
+        {% for notification in current_user.notifications %}
+            <li>{{ notification }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Additional dashboard content here -->
+
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

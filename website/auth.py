@@ -1,7 +1,11 @@
 from flask import Blueprint,render_template, request, redirect, url_for, flash
 from flask_login import login_required, login_user, logout_user, current_user
+from werkzeug.security import generate_password_hash
 from .models import User
+from website import db
 from .models import Blog
+#from website import bcrypt
+import bcrypt
 
 
 #from . import load_user
@@ -27,12 +31,13 @@ def login():
         password = request.form['password']
 
         user = User.query.filter_by(username=username).first()
-        if user and user.verify_password(password):
+        if user and bcrypt.checkpw(password.encode("utf-8"), user.password.encode("utf-8")):
             # searches the provided username in the database and 
             login_user(user)
             return redirect (url_for('dashboard'))
         else:
-            return "user doesn't exist"
+            flash("User doesn't exist or incorrect password")
+            return redirect(url_for('auth.login'))
     return render_template("login.html")
 
 
@@ -46,19 +51,26 @@ def register():
         password2 = request.form["password2"]
         
         if password1 != password2:
-            flash('password doesnt match')
+            flash('Password does not match')
+            return redirect(url_for('auth.register'))
 
         user = User.query.filter_by(email=email).first()
         if user:
-            
-            flash("Email already exists.", category='error')
-            redirect(url_for("auth.login"))
+            flash('Email already exists.')
+            return redirect(url_for("auth.register"))
         else:
-            new_user = User(username=username, email=email, password=password)
+            #password = password1
+            salt = bcrypt.gensalt()
+            hashed_password = bcrypt.hashpw(password1.encode("utf-8"), salt)
+
+            new_user = User(username=username, email=email, password=hashed_password)
+            #new_user = User(username=username, email=email, password=bcrypt.hashpw(salt, password.encode("utf-8")))
+            new_user.set_password(password1)
+
             db.session.add(new_user)
             db.session.commit()
+            flash("User registered successfully!")
             return redirect(url_for('auth.login'))
-            flash('User added successfully')
             
     return render_template("register.html")
 
