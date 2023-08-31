@@ -8,7 +8,7 @@
     
     <h2>Account Information</h2>
     <p>Email: {{ current_user.email }}</p>
-    <p>Joined on: {{ current_user.joined_date }}</p>
+    <p>Joined on: {{day}}{{ formated_date }}</p>
 
     <h2>Recent Activity</h2>
     <ul>
@@ -33,6 +33,6 @@
 
     <!-- Additional dashboard content here -->
 
-    <a href="{{ url_for('logout') }}">Logout</a>
+    <a href="{{ url_for('auth.login') }}">Logout</a>
 </body>
 </html>
