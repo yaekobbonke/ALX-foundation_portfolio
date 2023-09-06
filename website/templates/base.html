@@ -3,51 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}jackmansoftware.com{% endblock %}</title>
-    
+    <title>{% block title %}Yaekob Bonke {% endblock %}</title>
+
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     {% block custom_css %}{% endblock %}
 </head>
-
 <body>
-    <header>  
-    <nav class="navbar">
-    <div type="logo" class="logo">Jackmansoftware.com </div>
-    {% block header %} 
-        <div>    
-            <ul class="navbar_block">
-                <li class="items"><a href="/about">About</a></li>
-                <li class="items"><a href="/blog">Blog</a></li>
-                <li class="items"><a href="/contacts">Contacts</a></li>
-                <li class="items"><a href="/portfolio">Portfolio</a></li>
-                <li class="items"><a href="/login" class="lo">Login</a></li>
-                <li class="items"><a href="/register" class="si">Register</a></li>
-             </ul>
-        </div>
-    </nav>
-    {% endblock %}
-    </header>
+    <div type="logo" class="logo"> Yaekob Bonke</div>
+<nav class="navbar">
+    <div>
+    <ul class="navbar_block">
+          <li><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="#projects">Recent Projects</a></li>
+          <li><a href="/contacts">Contacts</a></li>
+          <li><a href="/login" class="lo">Login</a></li>
+          <li><a href="/register" class="si">Register</a></li>
+    </ul>
+    </div>
+</nav>
+    {% block content %}
+<section class="intro">
     <div class="cont">
-        {% block content %}
         <h3>Welcome To this website</h3>
-	<p>This is the website where you can get different blogs about 
-	<ul class="list">
-		<li>web development,</li> 
-		<li>programming languages</li> 
-		<li>and related technologies</li>
-	</ul>
-		<button type="click" class="more">Click here for more</button></p>
-        {% endblock %}
+        <p>This is my website where you can get different blog posts and tutorials about <br>
+            web development</p>       
+    </div>   
+</section>
+<section class="feature">
+     <div class="feature_picture">
+        <img src="/static/images/imagef2.png" alt="Nf1" >
     </div>
-    <footer>
-    <div class="social_media"> 
-	   <a href="#"><i class='bx bxl-facebook'></i></>
-	   <a href="#"><i class='bx bxl-twitter' ></i></a>
-	   <a href="#"><i class='bx bxl-instagram' ></i></a>
-	   <a href="#"><i class='bx bxl-linkedin' ></i></a>
-	   <a href="#"><i class='bx bxl-telegram' ></i></a>
-    </footer>
+    <div class="feature_picture2">
+    <img src="/static/images/imagef3.png" alt="Nf1">
     </div>
+</section>
+        <section class="about" id="about">
+            <div class="about_content">
+                <div><img src="/static/images/image2.jpg" alt="s" class="my_photo"></div>
+                <h2>About Me</h2>
+                <p>I am beginner developer with passion to be skillfull developer.<br>
+                    python is my favorite programming language.<br>
+                    I feel good in C programming language and javascript.
+                </p> 
+                <div class="social_media">
+                    <p>You can contact me on:</p>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                    <a href="https://github.com/yaekobbonke/ALX-foundation_portfolio" target="-blank"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+             </div>
+        </section>
+    
+<section class="projects" id="projects">
+    <div class="project_content">
+        <h2>My Current Projects</h2>
+        <h3>Private chatting app</h3>
+        <p>Private chatting application development is one of the projects I am doing on currently.<br> 
+            This application will enable me to share ideas with my students <br>and other people working with me</p>
+        <h3>Hospital management system</h3>
+        <p>In this project, I am mainly focusing on hospital patient record keeping system. 
+            Loss of patients data is comman problem in Ethiopia. 
+        This project will create user friendly system that can be managed by patients.
+        </p>  
+</div>
+</section>        
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  
+        
+    <script>
+        
+            // Smooth scroll to contacts section
+            $('a[href^="#"]').on('click', function(event) {
+                event.preventDefault();
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 30);
+            });
+        
+        </script>
+    {% endblock %}
 </body>
 </html>
