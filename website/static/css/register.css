@@ -1,65 +1,61 @@
-body {
-background-color: white;
-}
 .heading {
-margin-top: 100px;
-font-size: 50px;
-padding-bottom: 3px;
-}
-.form {
-margin-top: -50px;
-padding: 10px;
-}
-.form-group {
-background-color: white;
-margin-top: -5px;
-padding-top: 10px;
-text-align: center;
-}
-.btn {
-height: 25px;
-}
-button {
-height: 35px;
-font-size: 20px;
-cursor: pointer;
-padding: -5px;
-float: center;
-margin: -10px;
-display: inline-block;
-position: relative;
-background-color: pink;
-border-radius: 10px;
-margin-right: -30px;
-margin-top: 10px;
-}
-button:hover {
-background-color: tomato;
+    font-size: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    margin-top: 80px;
+    justify-content: center;
 }
 #username {
-width: 250px;
-height: 25px;
-border-radius: 15px;
-align-text: center;
-align-items: center;
+    justify-content: center;
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: 5px;
+    height: 25px;
+    width: 300px;
+    text-align: center;
+    font-size: 20px;
+    }
+
+    #email {
+        margin-bottom: 5px;
+        height: 25px;
+        width: 300px;
+        text-align: center;
+        font-size: 20px;
+    }
+    #password1 {
+        margin-bottom: 5px;
+        height: 25px;
+        width: 300px;
+        text-align: center;
+        font-size: 20px;
+    }
+    #password2 {
+        margin-bottom: 5px;
+        height: 25px;
+        width: 300px;
+        font-size: 20px;
+    }
+.form {
+ justify-content: center;
+ align-items: center;
+ display: flex;
+ margin-top: 10px;
+ background-color: white;
+ width: 70%;
+ border-radius: 7px;
+ margin-left: 15%;
+ margin-right: 25%;
+ padding: 20px;
 }
-#email {
-width: 250px;
-height: 25px;
-border-radius: 15px;
+button {
+    background-color: dimgrey;
+    color: white;
+    padding: 20px;
+    border: none;
+    margin-left: 40%;
 }
-#password1 {
-width: 250px;
-height: 25px;
-border-radius: 15px;
-}
-#password2 {
-width: 250px;
-height: 25px;
-border-radius: 15px;
-}
-.have_acount p { 
-font-size: 25px;
-padding-top: 10px;
-display: relative;
+button:hover {
+    background-color: darkmagenta;
 }

@@ -1,22 +1,60 @@
 .container {
-background-color: wheat;
-
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 80px;
+    padding: 50px;
+    background-color: aquamarine;
+    margin-left: 15%;
+    width: 70%;
+    border-radius: 10px;
 }
 .container h2 {
-font-size: 45px;
-padding: 20px;
-margin-bottom: -25px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    margin-top: -10px;
 }
 #username {
-width: 250px;
-height: 25px;
-border: none;
-margin: -5px;
-margin-top: -20px;
-padding-top: -10px;
+    font-size: 20px;
+    margin: 10px;
+    border: none;
+    height: 35px;
 }
+.username {
+    font-size: 30px;
+}
+.password {
+    font-size: 30px;
+}  
+
 #password {
-width: 250px;
-height: 25px;
-border: none;
+    font-size: 20px;
+    margin: 10px;
+    border: none; 
+    height: 35px;
+}
+p {
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+}
+button {
+    padding: 5px;
+    background-color: rgba(61, 59, 70, 0.733);
+    color: white;
+    display: inline-flex;
+    margin-left: -12px;
+    height: fit-content;
+    font-size: 20px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(255, 0, 106);
 }
