@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     {% block custom_css %}{% endblock %}
 </head>
 <body>
@@ -33,28 +34,57 @@
     </div>   
 </section>
 <section class="feature">
-     <div class="feature_picture">
-        <img src="/static/images/imagef2.png" alt="Nf1" >
-    </div>
-    <div class="feature_picture2">
-    <img src="/static/images/imagef3.png" alt="Nf1">
-    </div>
+     <div class="row">
+	     <h1>Our features </h1>
+     </div>
+     <div class="row">	    
+	     <div class="column">
+		     <div class="cards">
+			     <div class="icon">
+				     <i class="fa-thin fa-user"></i>
+			     </div>
+			     <h3>User friendly</h3>
+			     <p>Enables user to create account. It also enables user to login and access blogs</P>
+		     </div>
+	     </div>
+	     <div class="column">
+                     <div class="cards">
+                             <div class="icon">
+                                     <i class="fa-solid fa-shield-halved"></i>
+                             </div>
+                             <h3>super secure</h3>
+                             <p>Don't worry about security issue</P>
+                     </div>
+             </div>
+	     <div class="column">
+                     <div class="cards">
+                             <div class="icon">
+                                     <i class="fa-solid fa-headset"></i>
+                             </div>
+                             <h3>Quick support</h3>
+                             <p>We are always redy to give you quick support</P>
+                     </div>
+             </div>
+     
+     </div>
+
 </section>
-        <section class="about" id="about">
+ <section class="about" id="about">
             <div class="about_content">
-                <div><img src="/static/images/image2.jpg" alt="s" class="my_photo"></div>
+                <div><img src="/static/images/image2.JPG" alt="s" class="my_photo"></div>
                 <h2>About Me</h2>
-                <p>I am beginner developer with passion to be skillfull developer.<br>
-                    python is my favorite programming language.<br>
-                    I feel good in C programming language and javascript.
+		<p>This is my own website. By using this website,
+		I will post different blogs.
+		concerning web development and related technologies. 
+		This website enables users to create an acount and login to their dashboard.
                 </p> 
                 <div class="social_media">
                     <p>You can contact me on:</p>
-                    <a href="#"><i class='bx bxl-twitter' ></i></a>
-                    <a href="https://github.com/yaekobbonke/ALX-foundation_portfolio" target="-blank"><i class='bx bxl-github'></i></a>
-                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                    <a href="#" title="twitter"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://github.com/yaekobbonke/ALX-foundation_portfolio" target="-blank" title="Github"><i class='bx bxl-github'></i></a>
+                    <a href="#" target="-blank" title="Linkedin"><i class='bx bxl-linkedin'></i></a>
              </div>
-        </section>
+</section>
     
 <section class="projects" id="projects">
     <div class="project_content">
