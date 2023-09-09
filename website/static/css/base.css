@@ -22,37 +22,53 @@
       padding: 5px;
       align-items: center;
     }
-    .navbar {
-      background-color: limegreen;
-      height: 40px;
-      padding: 20px;
-      border-top: 0;
-      position: relative;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      align-items: center;
-      padding-top: 10px;
-      justify-content: space-between;
-    }
-    .navbar .navbar_block {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      float: right;
-    }
-    .navbar .navbar_block li {
-      display: inline-block;
-      margin-right: 100px; 
-    }
-    .navbar .navbar_block li a {
-      color: white;
-      text-decoration: none;
-      font-size: 25px;
-    }
-    .navbar .navbar_block li a:hover {
-      text-decoration: underline;
-    }
+
+.navbar {
+  background-color: greenyellow;
+  padding: 10px;
+
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar li {
+  margin-right: 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+}
+@media (max-width: 767px) {
+  .navbar ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  }
+
+  .navbar li {
+    margin: 5px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar li {
+    margin-right: 15px;
+   
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 20px;
+    
+  }
+}
+
     .cont {
       text-align: center;
       box-sizing: border-box;
