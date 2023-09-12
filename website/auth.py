@@ -19,7 +19,7 @@ def dashboard():
     user = current_user
     day = datetime.now().strftime('%A')
     formated_date =  datetime.now().strftime('%Y')
-    return render_template('dashboard.html', user=user,day=day, formated_date=formated_date, tasks=tasks, notification=notification)
+    return render_template('dashboard.html', user=user,day=day, formated_date=formated_date)
 # login view
 
 @auth_bp.route("/login", methods=["GET", "POST"])

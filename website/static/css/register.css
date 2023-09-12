@@ -1,9 +1,28 @@
+.form {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+    border: 10px solid rgb(238, 230, 230);
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 25%;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: lightblue;
+    transition: box-shadow 0.5s;
+    background: linear-gradient(0deg, rgb(39, 53, 39), transparent 10px);
+}
+.form:hover {
+    box-shadow: 0 0 10px black;
+}
+
 .heading {
     font-size: 20px;
     overflow: hidden;
     text-decoration: none;
     display: flex;
-    margin-top: 80px;
+    margin-top: 10px;
     justify-content: center;
 }
 #username {
@@ -37,18 +56,6 @@
         width: 300px;
         font-size: 20px;
     }
-.form {
- justify-content: center;
- align-items: center;
- display: flex;
- margin-top: 10px;
- background-color: white;
- width: 70%;
- border-radius: 7px;
- margin-left: 15%;
- margin-right: 25%;
- padding: 20px;
-}
 button {
     background-color: dimgrey;
     color: white;
