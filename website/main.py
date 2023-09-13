@@ -7,12 +7,12 @@ main_bp = Blueprint("main_bp", __name__)
 
 @main_bp.route("/")
 def home():
-    """displays landing page of the website"
+    """displays landing page of the website"""
     return render_template("base.html")
 
 @main_bp.route("/create", methods=['GET', 'POST'])
 def create():
-    ""enables owner of this website create new blog""
+    """enables owner of this website create new blog"""
     if request.method == 'POST':
         # Get the form data
         title = request.form['title']
@@ -29,11 +29,11 @@ def create():
     return render_template('create_blog.html')
 @main_bp.route("/blog")
 def blog(): 
-    ""enables users access blog post""
+    """enables users access blog post"""
     blog_posts = Blog.query.all()    
     return render_template('blog.html', blog_posts=blog_posts)
 
 @main_bp.route("/contacts")
 def contacts():
-    """displays contact addresses of the owner"
+    """displays contact addresses of the owner"""
     return render_template("contacts.html")
