@@ -24,6 +24,7 @@ def dashboard():
 
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
+    ""user login view""
 
     if request.method == 'POST':
         username = request.form['username']
