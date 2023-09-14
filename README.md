@@ -16,27 +16,44 @@ Make sure you have the latest version of Python installed.
 git clone <repo-url>
 
 Running The App
+
 python3 app.py
 
 Viewing The App landing page
-Go to http://127.0.0.1:5000 
+
+Go to
+
+http://127.0.0.1:5000 
 
 Viewing The Apps Registration page
-Go to http://127.0.0.1:5000/register
+
+Go to 
+
+http://127.0.0.1:5000/register
 
 Viewing The Apps login page
-Go to http://127.0.0.1:5000/login
 
-Go to http://127.0.0.1:5000/blog
+Go to 
+http://127.0.0.1:5000/login
+
 To access blog posts
 
+Go to 
+
+http://127.0.0.1:5000/blog
 
 Make sure you have installed:
+
 Flask
+
 pip3 install flask
+
 flask-sqlalchemy extension
+
 pip3 install Flask-SQLAlchemy
+
 flask_login
+
 pip3 install Flask-Login
 
 
