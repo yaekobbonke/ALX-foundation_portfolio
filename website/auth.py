@@ -24,7 +24,7 @@ def dashboard():
 
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
-    ""user login view""
+    """user login view"""
 
     if request.method == 'POST':
         username = request.form['username']
@@ -74,6 +74,6 @@ def register():
 @auth_bp.route("/logout")
 @login_required
 def logout():
-    """used to logout active user"""
+    """used to log out active user"""
     logout_user()
     return redirect(url_for("auth.login"))
